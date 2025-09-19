@@ -1,0 +1,50 @@
+Experiment - 3 (3)
+
+// Base class
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  getInfo() {
+    return `${this.name} is ${this.age} years old.`;
+  }
+}
+
+// Student subclass
+class Student extends Person {
+  constructor(name, age, course) {
+    super(name, age); // Call parent constructor
+    this.course = course;
+  }
+
+  // Overriding method
+  getInfo() {
+    return `${this.name} is ${this.age} years old and studies ${this.course}.`;
+  }
+}
+
+// Teacher subclass
+class Teacher extends Person {
+  constructor(name, age, subject) {
+    super(name, age);
+    this.subject = subject;
+  }
+
+  // Overriding method
+  getInfo() {
+    return `${this.name} is ${this.age} years old and teaches ${this.subject}.`;
+  }
+}
+
+// --- Demonstration ---
+
+const student1 = new Student("Arjun", 21, "Computer Science");
+const teacher1 = new Teacher("Dr. Sharma", 45, "Mathematics");
+
+console.log(student1.getInfo());
+// Output: Arjun is 21 years old and studies Computer Science.
+
+console.log(teacher1.getInfo());
+// Output: Dr. Sharma is 45 years old and teaches Mathematics.
